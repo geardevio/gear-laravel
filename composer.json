@@ -1,0 +1,26 @@
+{
+  "name": "geardev/laravel-bridge",
+  "description": "Logger. Part of toolkit to boost your development with Laravel and geardev.io",
+  "autoload": {
+    "psr-4": {
+      "GearDev\\LaravelBridge\\": "src/"
+    }
+  },
+  "require": {
+    "geardev/http-swow-server": "^0.1",
+    "geardev/prometheus": "^0.1",
+    "laravel/octane": "^2.4"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "GearDev\\LaravelBridge\\LaravelBridgeServiceProvider"
+      ]
+    }
+  },
+  "bin": [
+    "bin/gear.php",
+    "bin/gear-dev-server-arm64",
+    "bin/gear-server.php"
+  ]
+}
