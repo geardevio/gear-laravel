@@ -27,7 +27,8 @@ class LaravelBridgeServiceProvider extends ServiceProvider
         Route::get('/metrics', function () {
             $registry = RegistryContainer::getRegistry();
             $renderer = new RenderTextFormat();
-            return $renderer->render($registry->getMetricFamilySamples());
+            $responseText = $renderer->render($registry->getMetricFamilySamples());
+            return response($responseText)->header('Content-Type', RenderTextFormat::MIME_TYPE);
         });
     }
 }
