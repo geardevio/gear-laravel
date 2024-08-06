@@ -84,7 +84,7 @@ class SwowHttpPhpClient implements Client, ServesStaticFiles
         } elseif ($response->response instanceof JsonResponse) {
             $swowResponse = $this->createJsonResponse($response->response);
         } else {
-            $connection->error(510, 'Response Type is not supported: '.get_class($response), close: true);
+            $connection->error(510, 'Response Type is not supported: '.get_class($response->response), close: true);
         }
         $connection->sendHttpResponse($swowResponse);
         $connection->close();
